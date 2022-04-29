@@ -1,0 +1,10 @@
+.idea/*
+*__pycache__
+venv/*
+*reports
+*.pyc
+.spynnaker.cfg.lnk
+build/
+dist/
+neural_logic_gates.egg-info/
+Congreso_2022/
