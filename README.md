@@ -1,6 +1,6 @@
 # Neural Logic Blocks
 
-This repository contains an open source Python package that provides researchers with a new toolkit of Spiking Neural Networks (SNN)-based building blocks that emulate the behavior of associated digital components. Therefore, these spiking blocks are useful for developing bio-inspired applications, which can be very useful especially for neuromorphic engineers.
+This repository contains an open source Python package that provides researchers with a new toolkit of Spiking Neural Networks (SNN)-based building blocks that emulate the behavior of associated digital components. Therefore, these spiking blocks are useful for developing bio-inspired applications, which can be very useful especially for neuromorphic engineers. The toolkit has been developed using PyNN and SpyNNaker software packages and SpiNNaker hardware platform, more information in [depencencies](#dependencies) and [hardware platform](#hardware-platform)
 
 The set of blocks contained in this repository arises from a series of works, which is as follows:
 
@@ -10,10 +10,16 @@ Please go to section [cite this work](#cite-this-work) to learn how to properly 
 
 ## Table of contents
 
+- [Dependencies](#dependencies)
+- [Hardware platform](#hardware-platform)
 - [Installing](#installing)
 - [Documentation](#documentation)
 - [Cite this work](#cite-this-work)
 - [License](#license)
+
+## Dependencies
+
+## Hardware platform
 
 ## Installing
 
@@ -24,7 +30,7 @@ Please go to section [cite this work](#cite-this-work) to learn how to properly 
 ## License
 
 <p align="justify">
-This project is licensed under the GPL License - see the <a href="https://github.com/alvayus/Neural-Logic-Gates/blob/main/LICENSE">LICENSE.md file</a> for details.
+This project is licensed under the GPL License - see the <a href="https://github.com/alvayus/Neural-Logic-Gates/blob/main/LICENSE">LICENSE.md</a> file for details.
 </p>
 
 <p align="justify">
