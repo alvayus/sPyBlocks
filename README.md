@@ -1,8 +1,8 @@
-# Neural Logic Blocks
+# sPyBlocks
 
-This repository contains an open source Python package that provides researchers with a new toolkit of Spiking Neural Networks (SNN)-based building blocks that emulate the behavior of associated digital components. Therefore, these spiking blocks are useful for developing bio-inspired applications, which can be very useful especially for neuromorphic engineers. The toolkit has been developed using PyNN and SpyNNaker software packages and SpiNNaker hardware platform, more information in [depencencies](#dependencies) and [hardware platform](#hardware-platform)
+sPyBlocks is an open-source Python package that provides researchers with a new toolkit of Spiking Neural Networks (SNN)-based functional blocks that emulate the behavior of digital components. Therefore, these spiking blocks are useful for developing bio-inspired applications, which can be very useful especially for neuromorphic engineers. The toolkit has been developed using the sPyNNaker software package and the SpiNNaker hardware platform in conjunction with PyNN, and is compatible with all platforms supported by that package. More information in [depencencies](#dependencies) and [hardware platform](#hardware-platform).
 
-The set of blocks contained in this repository arises from a series of works, which is as follows:
+This package arises as a result of a series of works focused on the construction of spiking neural network blocks:
 
 - Spike-based building blocks for performing logic operations using Spiking Neural Networks on SpiNNaker. International Joint Conference on Neural Networks. Padua, Italy, 2022.
 
