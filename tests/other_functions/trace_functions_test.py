@@ -1,7 +1,7 @@
 import spynnaker8 as sim
 
-from neural_logic_gates import MultipleNeuralFlipFlop
-from neural_logic_gates import SpikeTrace
+from sPyBlocks import MultipleNeuralFlipFlop
+from sPyBlocks import SpikeTrace
 
 if __name__ == "__main__":
     # Simulator initialization neural_and simulation params

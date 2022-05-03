@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import spynnaker8 as sim
 
-from neural_logic_gates.constant_spike_source import ConstantSpikeSource
-from neural_logic_gates.neural_flank_detector import NeuralFlankDetector
-from neural_logic_gates.neural_oscillator import NeuralSyncOscillator
-from neural_logic_gates.trace_functions import SpikeTrace
+from sPyBlocks.constant_spike_source import ConstantSpikeSource
+from sPyBlocks.neural_flank_detector import NeuralFlankDetector
+from sPyBlocks.neural_oscillator import NeuralSyncOscillator
+from sPyBlocks.trace_functions import SpikeTrace
 
 if __name__ == "__main__":
     # Simulator initialization and simulation params

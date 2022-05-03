@@ -2,7 +2,7 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import spynnaker8 as sim
 
-from neural_logic_gates.neural_or import NeuralOr
+from sPyBlocks.neural_or import NeuralOr
 
 if __name__ == "__main__":
     # Simulator initialization neural_and simulation params

@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import spynnaker8 as sim
 
-from neural_logic_gates.constant_spike_source import ConstantSpikeSource
-from neural_logic_gates.neural_and import MultipleNeuralAnd
-from neural_logic_gates.trace_functions import SpikeTrace
+from sPyBlocks.constant_spike_source import ConstantSpikeSource
+from sPyBlocks.neural_and import MultipleNeuralAnd
+from sPyBlocks.trace_functions import SpikeTrace
 
 if __name__ == "__main__":
     # Simulator initialization neural_and simulation params

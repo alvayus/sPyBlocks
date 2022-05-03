@@ -2,8 +2,8 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import spynnaker8 as sim
 
-from neural_logic_gates.neural_latch_sr import NeuralLatchSR
-from neural_logic_gates.trace_functions import SpikeTrace
+from sPyBlocks.neural_latch_sr import NeuralLatchSR
+from sPyBlocks.trace_functions import SpikeTrace
 
 if __name__ == "__main__":
     # Simulator initialization and simulation params

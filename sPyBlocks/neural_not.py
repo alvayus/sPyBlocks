@@ -1,4 +1,4 @@
-from neural_logic_gates.connection_functions import create_connections, multiple_connect
+from sPyBlocks.connection_functions import create_connections, multiple_connect
 
 
 class NeuralNot:

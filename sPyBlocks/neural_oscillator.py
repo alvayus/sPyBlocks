@@ -1,4 +1,4 @@
-from neural_logic_gates.connection_functions import create_connections, inverse_rcp_type, multiple_connect, flatten
+from sPyBlocks.connection_functions import create_connections, inverse_rcp_type, multiple_connect, flatten
 
 
 class NeuralSyncOscillator:
