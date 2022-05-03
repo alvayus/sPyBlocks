@@ -20,17 +20,27 @@ Please go to section [cite this work](#cite-this-work) to learn how to properly 
 
 ## Dependencies
 
-- PyNN
+Still working on this.
 
 ## Hardware platform
 
+Still working on this.
+
 ## Installing
+
+Still working on this.
 
 ## Documentation
 
+Still working on this.
+
 ## Future works
 
+Still working on this.
+
 ## Cite this work
+
+Still working on this.
 
 ## License
 
