@@ -4,7 +4,19 @@ from .neural_not import NeuralNot
 
 
 class NeuralFlankDetector:
+    """
+    This class defines the flank detector block, which allows to detect rising and falling edges.
+    """
     def __init__(self, sim, global_params, neuron_params, std_conn, and_type="classic"):
+        """
+        Constructor of the class.
+
+        :param sim: The simulator package.
+        :param dict global_params: A dictionary of type str:int which must include the "min_delay" keyword. This keyword is likely to have the time period associated with it as a value.
+        :param dict neuron_params: A dictionary of type str:int containing the neuron parameters.
+        :param sim.StaticSynapse std_conn: The connection to be used for the construction of the block. Commonly, its weight is 1.0 and its delay is equal to the timestep.
+        :param str and_type: A string indicating the AND variant ("classic" or "fast"). "classic" by default.
+        """
         # Storing parameters
         self.sim = sim
         self.global_params = global_params
@@ -37,7 +49,18 @@ class NeuralFlankDetector:
 
     def connect_constant_spikes(self, input_population, conn=None, conn_all=True, rcp_type="excitatory",
                                 ini_pop_indexes=None, end_pop_indexes=None):
+        """
+        Connects an input population to the neurons to be inhibited or excited by the Constant Spike Source block.
 
+        :param sim.Population, sim.PopulationView, sim.Assembly, list input_population: A PyNN object or a list of PyNN objects containing the population to connect to the inhibited or excited neurons.
+        :param sim.StaticSynapse conn: The connection to use.
+        :param conn_all: Unused.
+        :param str rcp_type: A string indicating the receptor type of the connections (excitatory or inhibitory). "Excitatory" by default, it is recommended NOT to use this parameter.
+        :param list ini_pop_indexes: A list of indices used to select objects from the input population.
+        :param end_pop_indexes: Unused.
+        :return: The number of connections that have been created.
+        :rtype: int
+        """
         if conn is None:
             conn = self.std_conn
 
@@ -54,7 +77,18 @@ class NeuralFlankDetector:
 
     def connect_inputs(self, input_population, conn=None, conn_all=True, rcp_type="excitatory", ini_pop_indexes=None,
                        end_pop_indexes=None):
+        """
+        Connects an input population to the input neurons of the block.
 
+        :param sim.Population, sim.PopulationView, sim.Assembly, list input_population: A PyNN object or a list of PyNN objects containing the population to connect to the input neurons.
+        :param sim.StaticSynapse conn: The connection to use. std_conn (class parameter) by default.
+        :param conn_all: Unused.
+        :param str rcp_type: A string indicating the receptor type of the connections (excitatory or inhibitory). "Excitatory" by default.
+        :param list ini_pop_indexes: A list of indices used to select objects from the input population.
+        :param end_pop_indexes: Unused.
+        :return: The number of connections that have been created.
+        :rtype: int
+        """
         if conn is None:
             conn = self.std_conn
 
@@ -79,7 +113,18 @@ class NeuralFlankDetector:
 
     def connect_rising_edge(self, output_population, conn=None, conn_all=True, rcp_type="excitatory",
                             ini_pop_indexes=None, end_pop_indexes=None):
+        """
+        Connects the output AND of the block associated with the rising edge to an output population.
 
+        :param sim.Population, sim.PopulationView, sim.Assembly, list output_population: A PyNN object or a list of PyNN objects containing the population to connect the output neurons to.
+        :param sim.StaticSynapse conn: The connection to use. std_conn (class parameter) by default.
+        :param conn_all: Unused.
+        :param str rcp_type: A string indicating the receptor type of the connections (excitatory or inhibitory). "Excitatory" by default.
+        :param list ini_pop_indexes: Unused.
+        :param end_pop_indexes: A list of indices used to select objects from the output population.
+        :return: The number of connections that have been created.
+        :rtype: int
+        """
         if conn is None:
             conn = self.std_conn
 
@@ -92,7 +137,18 @@ class NeuralFlankDetector:
 
     def connect_falling_edge(self, output_population, conn=None, conn_all=True, rcp_type="excitatory",
                              ini_pop_indexes=None, end_pop_indexes=None):
+        """
+        Connects the output AND of the block associated with the falling edge to an output population.
 
+        :param sim.Population, sim.PopulationView, sim.Assembly, list output_population: A PyNN object or a list of PyNN objects containing the population to connect the output neurons to.
+        :param sim.StaticSynapse conn: The connection to use. std_conn (class parameter) by default.
+        :param conn_all: Unused.
+        :param str rcp_type: A string indicating the receptor type of the connections (excitatory or inhibitory). "Excitatory" by default.
+        :param list ini_pop_indexes: Unused.
+        :param end_pop_indexes: A list of indices used to select objects from the output population.
+        :return: The number of connections that have been created.
+        :rtype: int
+        """
         if conn is None:
             conn = self.std_conn
 
@@ -104,6 +160,13 @@ class NeuralFlankDetector:
         return created_connections
 
     def get_supplied_neurons(self, flat=False):
+        """
+        Gets a list containing all the neurons inhibited or excited by the Constant Spike Source block.
+
+        :param bool flat: A boolean value indicating whether or not to flatten the list. False by default.
+        :return: The list containing all the inhibited neurons of the block
+        :rtype: list
+        """
         if self.and_type == "classic":
             return self.not_gate.get_output_neuron()
         else:
@@ -113,10 +176,27 @@ class NeuralFlankDetector:
                 return [self.not_gate.get_output_neuron(), self.and_gates.get_output_neurons()]
 
     def get_input_neurons(self, flat=False):
+        """
+        Gets a list containing all the input neurons of the block.
+
+        :param bool flat: A boolean value indicating whether or not to flatten the list. False by default.
+        :return: The flattened or unflattened list containing all the input neurons of the block
+        :rtype: list
+        """
         if flat:
             return flatten([self.not_gate.get_input_neuron(), self.and_gates.get_input_neurons()])
         else:
             return [self.not_gate.get_input_neuron(), self.and_gates.get_input_neurons()]
 
-    def get_output_neurons(self):
-        return self.and_gates.get_output_neurons()
+    def get_output_neurons(self, flat=False):
+        """
+        Gets a list containing all the output neurons of the block.
+
+        :param bool flat: A boolean value indicating whether or not to flatten the list. False by default.
+        :return: The list containing all the output neurons of the block
+        :rtype: list
+        """
+        if flat:
+            return flatten(self.and_gates.get_output_neurons())
+        else:
+            return self.and_gates.get_output_neurons()

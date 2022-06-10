@@ -16,7 +16,7 @@ def truth_table_column(n_values, n_var, select=1):
     :raise ValueError: If select is not 0 or 1.
     """
 
-    if select != 1 or select != 0:
+    if select != 1 and select != 0:
         raise ValueError("Only binary values are allowed in the truth table")
 
     numbers = range(0, n_values)

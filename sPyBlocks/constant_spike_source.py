@@ -72,6 +72,6 @@ class ConstantSpikeSource:
         :rtype: list
         """
         if flat:
-            return flatten([self.set_source, self.latch.get_output_neuron()])
+            return flatten([self.set_source, self.latch.get_output_neurons()])
         else:
-            return [self.set_source, self.latch.get_output_neuron()]
+            return [self.set_source, self.latch.get_output_neurons()]

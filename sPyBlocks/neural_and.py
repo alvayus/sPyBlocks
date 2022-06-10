@@ -65,7 +65,7 @@ class NeuralAnd:
     def connect_inhibition(self, input_population, conn=None, conn_all=True, rcp_type="inhibitory",
                            ini_pop_indexes=None, end_pop_indexes=None):
         """
-        Connects an input population to the neurons to be inhibited.
+        Connects an input population to the neurons to be inhibited by the Constant Spike Source block.
 
         :param sim.Population, sim.PopulationView, sim.Assembly, list input_population: A PyNN object or a list of PyNN objects containing the population to connect to the inhibited neurons.
         :param sim.StaticSynapse conn: The connection to use. Internal inhibitory synapse by default, it is recommended NOT to use this parameter.
@@ -141,10 +141,11 @@ class NeuralAnd:
         self.total_output_connections += created_connections
         return created_connections
 
-    def get_inhibited_neuron(self):
+    def get_inhibited_neuron(self, flat=False):
         """
-        Gets a list containing all the inhibited neurons of the block
+        Gets a list containing all the neurons inhibited by the Constant Spike Source block.
 
+        :param bool flat: Unused.
         :return: The list containing all the inhibited neurons of the block
         :rtype: list
         """
@@ -155,7 +156,7 @@ class NeuralAnd:
 
     def get_input_neurons(self, flat=False):
         """
-        Gets a list containing all the input neurons of the block
+        Gets a list containing all the input neurons of the block.
 
         :param bool flat: A boolean value indicating whether or not to flatten the list. False by default.
         :return: The flattened or unflattened list containing all the input neurons of the block
@@ -169,10 +170,11 @@ class NeuralAnd:
         else:
             return [self.output_neuron]
 
-    def get_output_neurons(self):
+    def get_output_neurons(self, flat=False):
         """
-        Gets a list containing all the output neurons of the block
+        Gets a list containing all the output neurons of the block.
 
+        :param bool flat: Unused.
         :return: The list containing all the output neurons of the block
         :rtype: list
         """
@@ -232,7 +234,7 @@ class MultipleNeuralAnd:
     def connect_inhibition(self, input_population, conn=None, conn_all=True, rcp_type="inhibitory",
                            ini_pop_indexes=None, end_pop_indexes=None, component_indexes=None):
         """
-        Connects an input population to the neurons to be inhibited.
+        Connects an input population to the neurons to be inhibited by the Constant Spike Source block.
 
         :param sim.Population, sim.PopulationView, sim.Assembly, list input_population: A PyNN object or a list of PyNN objects containing the population to connect to the inhibited neurons.
         :param sim.StaticSynapse conn: The connection to use. Internal inhibitory synapse by default, it is recommended NOT to use this parameter.
@@ -316,7 +318,7 @@ class MultipleNeuralAnd:
 
     def get_inhibited_neurons(self, flat=False):
         """
-        Gets a list containing all the inhibited neurons of the blocks
+        Gets a list containing all the neurons inhibited by the Constant Spike Source block.
 
         :param bool flat: A boolean value indicating whether or not to flatten the list. False by default.
         :return: The list containing all the inhibited neurons of the blocks
@@ -334,7 +336,7 @@ class MultipleNeuralAnd:
 
     def get_input_neurons(self, flat=False):
         """
-        Gets a list containing all the input neurons of the blocks
+        Gets a list containing all the input neurons of the blocks.
 
         :param bool flat: A boolean value indicating whether or not to flatten the list. False by default.
         :return: The flattened or unflattened list containing all the input neurons of the blocks
@@ -352,7 +354,7 @@ class MultipleNeuralAnd:
 
     def get_output_neurons(self, flat=False):
         """
-        Gets a list containing all the output neurons of the blocks
+        Gets a list containing all the output neurons of the blocks.
 
         :param bool flat: A boolean value indicating whether or not to flatten the list. False by default.
         :return: The list containing all the output neurons of the blocks

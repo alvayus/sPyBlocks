@@ -4,7 +4,16 @@ import xlsxwriter
 
 
 class SpikeTrace:
+    """
+    The SpikeTrace class contains useful functions to create traces of the spiking functional blocks.
+    """
     def __init__(self, file_name, simtime):
+        """
+        Constructor of the class.
+
+        :param str file_name: Name of the file which will contain the SpikeTrace object (without extension).
+        :param int simtime: Time during which the simulation runs.
+        """
         self.excel = xlsxwriter.Workbook(os.getcwd() + "/" + file_name + ".xlsx")
         self.worksheets = []
         self.header_format = self.createFormat("#F4B084")
@@ -14,6 +23,9 @@ class SpikeTrace:
         self.writeHeader()
 
     def createFormat(self, color):
+        """
+
+        """
         excel_format = self.excel.add_format()
         excel_format.set_border()
         excel_format.set_bold()
@@ -32,7 +44,7 @@ class SpikeTrace:
                 worksheet_index += 1
                 local_column = 0
                 self.worksheets.append(self.excel.add_worksheet())
-                self.worksheets[worksheet_index].write(0, 0, "", self.header_format)
+                self.worksheets[worksheet_index].write(0, 0, "Time (ms)", self.header_format)
                 self.worksheets[worksheet_index].set_column(0, 0, 15)
                 self.worksheets[worksheet_index].set_column(1, self.simtime, 5)
 
