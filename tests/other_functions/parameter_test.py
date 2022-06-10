@@ -17,9 +17,10 @@ if __name__ == "__main__":
                   "v_rest": -65.0, "v_reset": -65.0, "v_thresh": -64.91}
 
     non_ideal_params = {"tau_m": 0.1, "v_rest": -65.0, "v_thresh": -64.94, "tau_syn_E": 1.0, "tau_syn_I": 1.0}
+    non_ideal_params_2 = {"tau_m": 0.1, "v_rest": -65.0, "v_thresh": -64.94}
 
     # Network building
-    params = non_ideal_params
+    params = non_ideal_params_2
     spike_source = sim.Population(1, sim.SpikeSourceArray(spike_times=[1.0, 49.0]))
     reset_source = sim.Population(1, sim.SpikeSourceArray(spike_times=[49.0, 51.0]))
     test_neuron = sim.Population(1, sim.IF_curr_exp(**params), initial_values={'v': params["v_rest"]})
