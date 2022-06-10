@@ -6,4 +6,5 @@ Welcome to the sPyBlocks documentation!
 
 	Home <self>
 	blocks
-	functions
+	other_functions
+	tutorials

@@ -6,5 +6,11 @@ This section contains a list of implemented spiking functional blocks inside the
 .. toctree::
    	:caption: Contents:
 	
-	constant_spike_source
+	neural_or
 	neural_and
+	neural_latch_sr
+	neural_oscillators
+	neural_xor
+	constant_spike_source
+	neural_not
+	neural_flank_detector
